@@ -18,7 +18,7 @@ const App: React.StatelessComponent<{}> = () => {
         <p>
           Provider is Mist: {(window as any).mist ? "yes" : "no"}
         </p>
-        {(web3.currentProvider as any).host ? <p>Provider is {(web3.currentProvider as any).host}</p> : null }
+        {(web3.currentProvider as any).host ? <p>Provider is {(web3.currentProvider as any).host}</p> : null}
       </div>
       <hr />
     </div>
