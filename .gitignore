@@ -1,0 +1,22 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/dist
+
+# misc
+.DS_Store
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+tmp/
+
+# vscode
+.vscode
+
+# chrome debugger userdata dir
+.chrome
