@@ -1,14 +1,14 @@
 {
-  "name": "eth-toolbox-dapp",
+  "name": "react-dapp-ts-template",
   "version": "1.0.0",
-  "description": "Ethereum Toolbox",
+  "description": "React DApp TS Template",
   "keywords": [
     "typescript",
     "react",
     "dapp"
   ],
   "bugs": {
-    "url": "https://github.com/LibertyLocked/eth-toolbox-dapp/issues"
+    "url": "https://github.com/LibertyLocked/react-dapp-ts-template/issues"
   },
   "author": "libertylocked",
   "contributors": [
@@ -17,46 +17,47 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/libertylocked/eth-toolbox-dapp.git"
+    "url": "https://github.com/libertylocked/react-dapp-ts-template.git"
   },
   "scripts": {
-    "start": "npm run-script serve",
-    "build": "npm run-script build-prod",
-    "watch": "cross-env NODE_ENV=development ./node_modules/.bin/webpack -w",
-    "build-dev": "cross-env NODE_ENV=development ./node_modules/.bin/webpack",
-    "build-prod": "cross-env NODE_ENV=production ./node_modules/.bin/webpack",
-    "clean": "./node_modules/.bin/rimraf ./dist",
-    "serve": "webpack-dev-server -w --hot --inline --config webpack.config.ts --host 0.0.0.0 --content-base public/"
+    "start": "npm run-script dev",
+    "build": "cross-env NODE_ENV=production webpack",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "clean": "./node_modules/.bin/rimraf ./build"
   },
   "dependencies": {
-    "moment": "^2.18.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "web3": "^0.20.1"
+    "bluebird": "^3.5.1",
+    "ethereumjs-util": "^5.1.2",
+    "moment": "^2.19.2",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
+    "truffle-contract": "^3.0.1",
+    "web3": "^0.20.2"
   },
   "devDependencies": {
-    "@types/bignumber.js": "^4.0.2",
-    "@types/node": "^8.0.9",
-    "@types/react": "^15.0.35",
-    "@types/react-dom": "^15.5.1",
-    "@types/webpack": "^3.0.2",
-    "clean-webpack-plugin": "^0.1.16",
-    "copy-webpack-plugin": "^4.0.1",
-    "cross-env": "^5.0.1",
-    "css-loader": "^0.28.4",
-    "file-loader": "^0.11.2",
-    "postcss-loader": "^2.0.6",
-    "rimraf": "^2.6.1",
-    "source-map-loader": "^0.2.1",
-    "style-loader": "^0.18.2",
-    "ts-loader": "^2.2.2",
-    "ts-node": "^3.2.0",
-    "tslint": "^5.5.0",
+    "@types/bignumber.js": "^4.0.3",
+    "@types/node": "^8.0.51",
+    "@types/react": "^16.0.22",
+    "@types/react-dom": "^16.0.3",
+    "@types/webpack": "^3.8.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "copy-webpack-plugin": "^4.2.0",
+    "cross-env": "^5.1.1",
+    "css-loader": "^0.28.7",
+    "ethereumjs-testrpc": "^6.0.1",
+    "file-loader": "^1.1.5",
+    "postcss-loader": "^2.0.8",
+    "rimraf": "^2.6.2",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.19.0",
+    "ts-loader": "^3.1.1",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.8.0",
     "tslint-loader": "^3.5.3",
-    "tslint-react": "^3.0.0",
-    "typescript": "^2.4.1",
-    "web3-typescript-typings": "^0.3.0",
-    "webpack": "^3.1.0",
-    "webpack-dev-server": "^2.6.1"
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.6.1",
+    "web3-typescript-typings": "^0.7.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
   }
 }

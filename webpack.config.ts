@@ -1,12 +1,11 @@
+// tslint:disable:no-implicit-dependencies
 import * as path from "path";
 import * as webpack from "webpack";
 
 // webpack plugins
-const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 // postcss plugins
 const autoprefixer = require("autoprefixer");
-const cssnano = require("cssnano");
 
 const isProd = (): boolean => {
   return process.env.NODE_ENV === "production";
@@ -15,6 +14,7 @@ const isProd = (): boolean => {
 const buildConfig: webpack.Configuration = {
   entry: {
     bundle: path.join(__dirname, "src/index.tsx"),
+    vendor_bundle: ["web3", "truffle-contract", "bluebird", "react", "react-dom"],
   },
   module: {
     rules: [
@@ -23,10 +23,6 @@ const buildConfig: webpack.Configuration = {
         exclude: /node_modules/,
         loader: "ts-loader",
         test: /\.tsx?$/,
-        options: {
-          transpileOnly: true,
-          isoLatedModules: true,
-        },
       },
       // css loader
       // source maps are generated only for dev builds
@@ -37,8 +33,7 @@ const buildConfig: webpack.Configuration = {
           { loader: "style-loader", options: { sourceMap: !isProd() } },
           {
             loader: "css-loader", options: {
-              localIdentName:
-              isProd() ? "[hash:base64]" : "[path][name]__[local]__[hash:base64:6]",
+              localIdentName: isProd() ? "[hash:base64]" : "[path][name]__[local]__[hash:base64:6]",
               minimize: isProd(),
               modules: true,
               sourceMap: !isProd(),
@@ -60,33 +55,44 @@ const buildConfig: webpack.Configuration = {
           },
         ],
       },
-      // image file loader
+      // file loader for media assets
       {
+        exclude: [
+          /\.(html?)$/,
+          /\.(ts|tsx|js|jsx)$/,
+          /\.css$/,
+          /\.json$/,
+        ],
         loader: "file-loader",
         query: {
           name: "[hash].[ext]",
-          outputPath: "assets/",
+          outputPath: "media/",
           publicPath: "/",
         },
-        test: /\.(jpg|png|svg|gif)$/,
       },
     ],
-  },
+  } as webpack.NewModule,
   output: {
     filename: "[name].js",
-    path: path.join(__dirname, "dist"),
+    publicPath: "/",
+    path: path.join(__dirname, "build/app"),
   },
   plugins: [
     // exclude locale files in moment
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    // copy files in public to dist
+    // pack vendor chunk
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "vendor_bundle",
+      minChunks: Infinity,
+    }),
+    // copy files in public to build
     new CopyWebpackPlugin([{
       context: "public",
       from: {
         dot: false,
         glob: "**/*",
       },
-      to: path.join(__dirname, "dist/"),
+      to: path.join(__dirname, "build/app/"),
     }]),
   ],
   resolve: {
@@ -101,8 +107,6 @@ if (isProd()) {
     new webpack.DefinePlugin({
       "process.env": { NODE_ENV: JSON.stringify("production") },
     }),
-    // clean output files
-    new CleanWebpackPlugin(["dist"]),
     // minify
     new webpack.optimize.UglifyJsPlugin(),
   ]);
@@ -124,7 +128,7 @@ if (isProd()) {
     }),
     // exclude source mapping for vendor libs
     new webpack.SourceMapDevToolPlugin({
-      exclude: /^vendor.*.\.js$/,
+      exclude: /^(vendor_).*\.js$/,
       filename: "[file].map",
     }),
   ]);
