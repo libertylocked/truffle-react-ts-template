@@ -14,7 +14,7 @@ const isProd = (): boolean => {
 const buildConfig: webpack.Configuration = {
   entry: {
     bundle: path.join(__dirname, "src/index.tsx"),
-    vendor_bundle: ["web3", "truffle-contract", "bluebird", "react", "react-dom"],
+    vendor_bundle: ["react", "react-dom", "web3", "truffle-contract", "bluebird", "ethereumjs-util"],
   },
   module: {
     rules: [
