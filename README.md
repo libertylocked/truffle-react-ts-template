@@ -1,15 +1,5 @@
-React Typescript Ethereum DApp Template
+Truffle React TypeScript Template
 ---
-A preliminary template for React TypeScript DApps
-
-Before I package it into a *truffle box*, this repo serves as a template for new DApp projects.
-
-# Features
-- Truffle setup
-- Webpack setup
-- React v16
-- Typescript
-
 ## Getting Started
 
 1. Install [Truffle](http://truffleframework.com) and an Ethereum client - like [EthereumJS TestRPC](https://github.com/ethereumjs/testrpc).

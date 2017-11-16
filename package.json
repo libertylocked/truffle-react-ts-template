@@ -1,5 +1,5 @@
 {
-  "name": "react-dapp-ts-template",
+  "name": "truffle-react-ts-template",
   "version": "1.0.0",
   "description": "React DApp TS Template",
   "keywords": [
@@ -8,7 +8,7 @@
     "dapp"
   ],
   "bugs": {
-    "url": "https://github.com/LibertyLocked/react-dapp-ts-template/issues"
+    "url": "https://github.com/LibertyLocked/truffle-react-ts-template/issues"
   },
   "author": "libertylocked",
   "contributors": [
@@ -17,7 +17,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/libertylocked/react-dapp-ts-template.git"
+    "url": "https://github.com/libertylocked/truffle-react-ts-template.git"
   },
   "scripts": {
     "start": "npm run-script dev",
