@@ -54,6 +54,7 @@
     }
   },
   "dependencies": {
+    "bignumber.js": "^4.1.0",
     "bluebird": "^3.5.1",
     "ethereumjs-util": "^5.1.2",
     "raf": "^3.4.0",

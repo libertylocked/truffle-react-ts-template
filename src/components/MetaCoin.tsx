@@ -1,4 +1,4 @@
-import BigNumber from "bignumber.js";
+import { BigNumber } from "bignumber.js";
 import * as React from "react";
 import * as TruffleContract from "truffle-contract";
 import * as Web3 from "web3";
