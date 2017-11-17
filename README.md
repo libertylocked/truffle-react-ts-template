@@ -1,5 +1,8 @@
 Truffle React TypeScript Template
 ---
+
+![box-img-sm](./box-img-sm.png)
+
 ## Getting Started
 
 1. Install [Truffle](http://truffleframework.com) and an Ethereum client - like [EthereumJS TestRPC](https://github.com/ethereumjs/testrpc).
