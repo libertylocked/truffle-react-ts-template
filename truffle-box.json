@@ -2,7 +2,10 @@
   "ignore": [
     "README.md",
     "LICENSE.md",
-    ".gitignore"
+    ".gitignore",
+    "box-img-lg-template.png",
+    "box-img-sm-template.png",
+    "box-img-sm.png"
   ],
   "commands": {
     "Compile": "truffle compile",
