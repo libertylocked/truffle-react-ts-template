@@ -1,7 +1,7 @@
 Truffle React TypeScript Template
 ---
 
-![box-img-sm](./box-img-sm.png)
+![box-img-sm](https://github.com/LibertyLocked/truffle-react-ts-template/blob/master/box-img-sm.png?raw=true)
 
 ## Getting Started
 
