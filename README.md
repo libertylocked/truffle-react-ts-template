@@ -47,16 +47,16 @@ This box comes with `truffle` contracts testing and front-end testing with `jest
 
 ## Directory Structure
 ```
-├── build
-│   ├── app (Production app dist )
-│   └── contracts (Migrated contracts)
-├── config
-│   └── jest (Jest config and polyfills)
-├── contracts (Solidity source)
-├── migrations (Migration scripts)
-├── public (Public html)
-├── src (React app source)
-└── test (Contract tests)
+\build
+  \app (Production app dist )
+  \contracts (Migrated contracts)
+\config
+  \jest (Jest config and polyfills)
+\contracts (Solidity source)
+\migrations (Migration scripts)
+\public (Public html)
+\src (React app source)
+\test (Contract tests)
 ```
 
 ## FAQ
