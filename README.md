@@ -5,18 +5,17 @@ Truffle React TypeScript Template
 
 ## Getting Started
 
-1. Install [Truffle](http://truffleframework.com) and an Ethereum client - like [EthereumJS TestRPC](https://github.com/ethereumjs/testrpc).
+1. Install test and solidity dependencies
+    ```
+    npm install
+    ```
+1. Install [Truffle](http://truffleframework.com)
     ```
     npm install -g truffle
-    npm install -g ethereumjs-testrpc
-    ```
-1. Launch [`testrpc`](https://github.com/ethereumjs/testrpc).
-    ```
-    testrpc <options>
     ```
 1. Migrate the contracts with truffle.
     ```
-    truffle migrate
+    truffle migrate --network 'network_name'
     ```
 1. Run the webpack server for front-end hot reloading
     ```
@@ -29,15 +28,11 @@ This box comes with `truffle` contracts testing and front-end testing with `jest
     ```
     truffle test
     ```
-1. Jest tests
-    ```
-    npm run test
-    ```
 
 ## Building for Production
 1. Migrate the contracts with truffle.
     ```
-    truffle migrate
+    truffle migrate --network 'network_name'
     ```
 1. Create production bundle
     ```
